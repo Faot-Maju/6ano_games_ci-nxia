@@ -1,1 +1,274 @@
+:root {
+  --ink: #1d2746;
+  --muted: #66708a;
+  --paper: #ffffff;
+  --purple: #6c4ee6;
+  --purple-dark: #5035c5;
+  --blue: #4db7e8;
+  --yellow: #ffd65a;
+  --green: #38c98b;
+  --red: #ef6b78;
+  --bg: #f3f6ff;
+  --shadow: 0 18px 45px rgba(48, 54, 105, .14);
+  --radius: 28px;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(
+    145deg,
+    #eef5ff 0%,
+    #f9f3ff 52%,
+    #fff9e8 100%
+  );
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 4px solid #1d2746;
+  outline-offset: 3px;
+}
+
+/* Formas decorativas do fundo */
+
+.background-shapes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: .45;
+}
+
+.shape-1 {
+  width: 220px;
+  height: 220px;
+  background: #c9eaff;
+  top: 5%;
+  left: -80px;
+}
+
+.shape-2 {
+  width: 180px;
+  height: 180px;
+  background: #e5d9ff;
+  top: 42%;
+  right: -70px;
+}
+
+.shape-3 {
+  width: 120px;
+  height: 120px;
+  background: #fff0a7;
+  bottom: 8%;
+  left: 7%;
+}
+
+.shape-4 {
+  width: 90px;
+  height: 90px;
+  background: #b9f2d9;
+  top: 16%;
+  right: 15%;
+}
+
+/* Cabeçalho */
+
+.topbar {
+  width: min(1100px, calc(100% - 32px));
+  margin: 18px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(45, 50, 90, .12);
+}
+
+.mini-badge {
+  background: #fff;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--purple);
+  box-shadow: 0 8px 22px rgba(45, 50, 90, .08);
+}
+
+/* Organização das telas */
+
+.game-shell {
+  width: min(900px, calc(100% - 32px));
+  margin: 28px auto;
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  animation: rise .35s ease both;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cartões principais */
+
+.hero-card,
+.panel-card,
+.quiz-card,
+.result-card {
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+/* Tela inicial */
+
+.hero-card {
+  text-align: center;
+  padding: 50px 42px 38px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.mascot {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 30px;
+  background: #ede8ff;
+  font-size: 3.7rem;
+  transform: rotate(-3deg);
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--purple);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+h1,
+h2 {
+  font-family: "Baloo 2", sans-serif;
+  line-height: 1.05;
+  margin: 8px 0 14px;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--ink);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero-card p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.mission-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 28px;
+}
+
+.mission-pills span {
+  padding: 9px 13px;
+  background: #f5f7ff;
+  border-radius: 999px;
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+/* Botões */
+
+.primary-btn,
+.next-btn {
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+  border-radius: 17px;
+  padding: 15px 24px;
+  transition:
+    transform .18s,
+    box-shadow .18s,
+    background .18s;
+}
+
+.primary-btn {
+  background: linear-gradient(
+    135deg,
+    var(--purple),
+    #8b6df2
+  );
+  box-shadow: 0 10px 22px rgba(108, 78, 230, .27);
+  min-width: 220px;
+}
