@@ -3,192 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Missão Cientista: quiz educativo de Ciências para estudantes do 6º ano.">
-  <title>Missão Cientista | Quiz de Ciências</title>
+  <title>Missão Cientista</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <div class="background-shapes" aria-hidden="true">
-    <span class="shape shape-1"></span>
-    <span class="shape shape-2"></span>
-    <span class="shape shape-3"></span>
-    <span class="shape shape-4"></span>
-  </div>
+  <div class="background-decoration decoration-one">✦</div>
+  <div class="background-decoration decoration-two">✿</div>
+  <div class="background-decoration decoration-three">＋</div>
+  <div class="background-decoration decoration-four">✧</div>
 
   <header class="topbar">
-    <div class="brand">
-      <span class="brand-icon">🔬</span>
-      <span>Missão Cientista</span>
-    </div>
+    <a class="brand" href="#" aria-label="Missão Cientista, início">
+      <span class="brand-icon">✨</span>
+      <span>missão <strong>cientista</strong></span>
+    </a>
 
-    <div class="mini-badge">6º ANO • CIÊNCIAS</div>
+    <span class="edition">🚀 LABORATÓRIO DE AVENTURAS</span>
   </header>
 
-  <main class="game-shell">
+  <main class="main-container">
 
-    <!-- Tela inicial -->
-    <section id="home-screen" class="screen active" aria-labelledby="home-title">
-      <div class="hero-card">
-        <div class="mascot" aria-hidden="true">🧑‍🔬</div>
+    <!-- TELA INICIAL -->
+    <section id="home-screen" class="screen active">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span>⭐</span> SUA PRÓXIMA GRANDE DESCOBERTA</span>
 
-        <span class="eyebrow">DESAFIO DO CONHECIMENTO</span>
+          <h1>
+            Pequenos cientistas,
+            <span class="title-highlight">grandes descobertas!</span>
+          </h1>
 
-        <h1 id="home-title">Missão Cientista</h1>
+          <p class="hero-description">
+            Prepare sua curiosidade, explore o mundo da ciência e descubra
+            quantos conhecimentos incríveis você tem!
+          </p>
 
-        <p>
-          Explore, pense e descubra! Responda às perguntas
-          e complete sua missão científica.
-        </p>
+          <div class="hero-buttons">
+            <button id="start-button" class="button button-primary">
+              Começar aventura <span>🚀</span>
+            </button>
 
-        <div class="mission-pills">
-          <span>🧠 10 desafios</span>
-          <span>⭐ Até 100 pontos</span>
-          <span>🏆 Ranking pessoal</span>
-        </div>
-
-        <button id="start-btn" class="primary-btn" type="button">
-          COMEÇAR MISSÃO <span>→</span>
-        </button>
-
-        <p class="tip">
-          Não precisa ter pressa. Leia cada pergunta com atenção!
-        </p>
-      </div>
-    </section>
-
-    <!-- Tela de instruções -->
-    <section id="instructions-screen" class="screen" aria-labelledby="instructions-title">
-      <div class="panel-card">
-        <div class="section-icon" aria-hidden="true">🧭</div>
-
-        <span class="eyebrow">COMO JOGAR</span>
-
-        <h2 id="instructions-title">Sua missão é simples!</h2>
-
-        <div class="steps">
-          <div class="step">
-            <b>1</b>
-            <span>Leia a pergunta.</span>
+            <button id="instructions-button" class="button button-secondary">
+              Como jogar? <span>💡</span>
+            </button>
           </div>
 
-          <div class="step">
-            <b>2</b>
-            <span>Escolha uma alternativa.</span>
-          </div>
-
-          <div class="step">
-            <b>3</b>
-            <span>Veja seu feedback.</span>
-          </div>
-
-          <div class="step">
-            <b>4</b>
-            <span>Acumule pontos e chegue ao final!</span>
+          <div class="field-note">
+            <span class="note-icon">🔎</span>
+            <span>Observe, pense, descubra. Todo cientista começa com uma pergunta!</span>
           </div>
         </div>
 
-        <button id="ready-btn" class="primary-btn" type="button">
-          VAMOS LÁ! 🚀
-        </button>
-      </div>
-    </section>
+        <div class="hero-art">
+          <div class="art-spark spark-one">✦</div>
+          <div class="art-spark spark-two">✧</div>
+          <div class="art-spark spark-three">✳</div>
 
-    <!-- Tela do quiz -->
-    <section id="quiz-screen" class="screen" aria-labelledby="question-text">
-      <div class="quiz-card">
+          <div class="hero-illustration">
+            <div class="illustration-cloud cloud-one"></div>
+            <div class="illustration-cloud cloud-two"></div>
 
-        <div class="quiz-top">
-          <div class="progress-wrap">
-            <div class="progress-label">
-              <span id="question-counter">Questão 1 de 10</span>
-              <strong id="score-label">0 pts</strong>
+            <div class="planet planet-one">✨</div>
+            <div class="planet planet-two">⭐</div>
+
+            <div class="science-character">
+              <div class="character-hair"></div>
+              <div class="character-face">
+                <span class="character-eye eye-left"></span>
+                <span class="character-eye eye-right"></span>
+                <span class="character-smile"></span>
+                <span class="character-cheek cheek-left"></span>
+                <span class="character-cheek cheek-right"></span>
+              </div>
+              <div class="character-neck"></div>
+              <div class="character-coat">
+                <span class="coat-pocket"></span>
+                <span class="coat-button button-dot-one"></span>
+                <span class="coat-button button-dot-two"></span>
+              </div>
+              <div class="character-arm arm-left"></div>
+              <div class="character-arm arm-right"></div>
+              <div class="character-hand">✨</div>
             </div>
 
-            <div class="progress-track">
-              <div id="progress-bar" class="progress-bar"></div>
+            <div class="floating-card card-dna">
+              <span>✨</span>
+              <small>VIDA</small>
+            </div>
+
+            <div class="floating-card card-atom">
+              <span>⚛️</span>
+              <small>ÁTOMOS</small>
+            </div>
+
+            <div class="floating-card card-leaf">
+              <span>🌱</span>
+              <small>NATUREZA</small>
+            </div>
+
+            <div class="art-caption">A curiosidade é o nosso superpoder!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-bottom">
+        <div class="info-cell">
+          <span class="info-icon info-yellow">✨</span>
+          <div>
+            <strong>10 desafios</strong>
+            <small>Teste seus conhecimentos</small>
+          </div>
+        </div>
+
+        <div class="info-cell">
+          <span class="info-icon info-pink">🌈</span>
+          <div>
+            <strong>Aprender brincando</strong>
+            <small>Descubra algo novo</small>
+          </div>
+        </div>
+
+        <div class="info-cell">
+          <span class="info-icon info-blue">🏆</span>
+          <div>
+            <strong>Conquiste medalhas</strong>
+            <small>Mostre seu talento</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA DE INSTRUÇÕES -->
+    <section id="instructions-screen" class="screen">
+      <div class="section-heading">
+        <span class="eyebrow">📘 GUIA DO EXPLORADOR</span>
+        <h2>Como jogar?</h2>
+        <p>É simples! Siga os passos e prepare-se para a missão.</p>
+      </div>
+
+      <div class="instructions-grid">
+        <article class="instruction-card instruction-purple">
+          <span class="instruction-icon">🔬</span>
+          <span class="step-number">PASSO 01</span>
+          <h3>Leia com atenção</h3>
+          <p>Observe a pergunta e pense como um verdadeiro cientista.</p>
+        </article>
+
+        <article class="instruction-card instruction-blue">
+          <span class="instruction-icon">💭</span>
+          <span class="step-number">PASSO 02</span>
+          <h3>Escolha sua resposta</h3>
+          <p>Toque na alternativa que você considera correta.</p>
+        </article>
+
+        <article class="instruction-card instruction-yellow">
+          <span class="instruction-icon">⭐</span>
+          <span class="step-number">PASSO 03</span>
+          <h3>Aprenda e avance</h3>
+          <p>Descubra a explicação, acumule pontos e complete a missão!</p>
+        </article>
+      </div>
+
+      <div class="instructions-footer">
+        <p>💚 Errar também faz parte de aprender. Continue tentando!</p>
+        <button id="back-button" class="button button-secondary">Voltar ao início</button>
+        <button id="play-button" class="button button-primary">Vamos jogar! 🚀</button>
+      </div>
+    </section>
+
+    <!-- TELA DO QUIZ -->
+    <section id="quiz-screen" class="screen">
+      <div class="quiz-topline">
+        <div class="quiz-brand">
+          <span>✨</span>
+          <div>
+            <strong>Missão em andamento</strong>
+            <small>Seu laboratório de descobertas</small>
+          </div>
+        </div>
+
+        <button id="sound-toggle" class="sound-button" type="button" aria-label="Ativar ou desativar sons">
+          <span id="sound-icon">🔊</span>
+          <span id="sound-label">Som ligado</span>
+        </button>
+      </div>
+
+      <div class="quiz-meta">
+        <span id="question-number">PERGUNTA 1 DE 10</span>
+        <span class="score-pill">⭐ <span id="score">0</span> pontos</span>
+      </div>
+
+      <div
+        id="progress-track"
+        class="progress-track"
+        role="progressbar"
+        aria-label="Progresso do quiz"
+        aria-valuemin="0"
+        aria-valuemax="10"
+        aria-valuenow="0"
+      >
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="quiz-layout">
+        <div class="question-main">
+          <div class="question-category">
+            <span id="category-symbol">🌎</span>
+            <span id="category-label">CIÊNCIAS</span>
+          </div>
+
+          <h2 id="question-text">Preparando seu primeiro desafio...</h2>
+          <p class="answer-hint">Escolha uma alternativa:</p>
+
+          <div id="answers-container" class="answers-container"></div>
+
+          <div id="feedback" class="feedback" aria-live="polite" hidden>
+            <div id="feedback-symbol" class="feedback-symbol">💡</div>
+            <div>
+              <strong id="feedback-title">Muito bem!</strong>
+              <p id="feedback-text"></p>
             </div>
           </div>
 
-          <div class="streak" id="streak-label">🔥 0</div>
+          <div class="quiz-actions">
+            <span id="streak-label" class="streak-label">🔥 Sequência: 0</span>
+            <button id="next-button" class="button button-primary" disabled>
+              Próximo desafio ➜
+            </button>
+          </div>
         </div>
 
-        <div class="topic-tag" id="topic-tag">
-          MATÉRIA E ENERGIA
-        </div>
+        <aside class="quiz-sidebar">
+          <div class="sidebar-note">
+            <span class="sidebar-star">✨</span>
+            <h3>Você consegue!</h3>
+            <p>Cada pergunta é uma oportunidade de descobrir algo novo.</p>
+          </div>
 
-        <h2 id="question-text">Pergunta</h2>
+          <div class="sidebar-illustration">
+            <span class="sidebar-emoji">🔭</span>
+            <span class="sidebar-orbit orbit-a">✦</span>
+            <span class="sidebar-orbit orbit-b">✧</span>
+          </div>
 
-        <div id="answers" class="answers" role="group" aria-label="Alternativas">
-        </div>
+          <div class="sidebar-stat">
+            <span>🎯</span>
+            <div>
+              <small>SEU OBJETIVO</small>
+              <strong id="status-label">Começar a missão</strong>
+            </div>
+          </div>
 
-        <div id="feedback" class="feedback" role="status" aria-live="polite">
-        </div>
-
-        <button id="next-btn" class="next-btn" type="button" disabled>
-          PRÓXIMA →
-        </button>
-
+          <div class="sidebar-progress">
+            <span>Progresso da missão</span>
+            <span id="sidebar-question">0 de 10</span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- Tela de resultado -->
-    <section id="result-screen" class="screen" aria-labelledby="result-title">
-      <div class="result-card">
+    <!-- TELA DE RESULTADO -->
+    <section id="result-screen" class="screen">
+      <div class="result-header">
+        <span class="eyebrow">🎉 MISSÃO CONCLUÍDA!</span>
+        <div id="result-seal" class="result-seal">🏆</div>
+        <h2 id="result-title">Parabéns, cientista!</h2>
+        <p id="result-message">Você completou sua aventura científica!</p>
+      </div>
 
-        <div id="result-emoji" class="result-emoji" aria-hidden="true">
-          🏆
+      <div class="result-score-card">
+        <span class="result-score-label">SUA PONTUAÇÃO</span>
+        <div class="result-score"><span id="final-score">0</span><small>/100</small></div>
+        <div id="rank-label" class="rank-label">🔍 Explorador curioso</div>
+      </div>
+
+      <div class="result-stats">
+        <div class="result-stat stat-correct">
+          <span>✅</span>
+          <strong id="correct-answers">0</strong>
+          <small>Acertos</small>
         </div>
 
-        <span class="eyebrow">MISSÃO CONCLUÍDA</span>
-
-        <h2 id="result-title">Excelente, cientista!</h2>
-
-        <div class="score-circle">
-          <strong id="final-score">0</strong>
-          <span>/ 100</span>
+        <div class="result-stat stat-wrong">
+          <span>💡</span>
+          <strong id="wrong-answers">0</strong>
+          <small>Novas descobertas</small>
         </div>
 
-        <p id="result-message">
-          Você completou todos os desafios.
-        </p>
-
-        <div class="stats">
-          <div>
-            <strong id="correct-count">0</strong>
-            <span>Acertos</span>
-          </div>
-
-          <div>
-            <strong id="wrong-count">0</strong>
-            <span>Erros</span>
-          </div>
-
-          <div>
-            <strong id="best-streak">0</strong>
-            <span>Maior sequência</span>
-          </div>
+        <div class="result-stat stat-streak">
+          <span>🔥</span>
+          <strong id="best-streak">0</strong>
+          <small>Maior sequência</small>
         </div>
+      </div>
 
-        <button id="restart-btn" class="primary-btn" type="button">
-          JOGAR NOVAMENTE 🔄
+      <div class="review-section">
+        <button id="review-button" class="review-toggle" aria-expanded="false">
+          <span>📚 Revisar minhas respostas</span>
+          <span id="review-arrow">＋</span>
         </button>
+        <div id="review-panel" class="review-panel" hidden></div>
+      </div>
 
+      <div class="result-footer">
+        <button id="restart-button" class="button button-primary">
+          Jogar novamente 🔄
+        </button>
       </div>
     </section>
-
   </main>
 
-  <footer>
-    <span>Projeto educativo • Ciências • 6º ano</span>
-    <span>Feito para aprender brincando 💡</span>
+  <footer class="page-footer">
+    <span>🌱</span> Feito para mentes curiosas <span>💜</span>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
